@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css')}}">
+</head>
+<body>
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocLey34rCZEdUtD-pXFf0mwvixDvTB0zzE1alvOUBktQziKc8NI6=s288-c-no" alt="Logo">
+    <br>
+    <form action="greet" method="post">
+        {% for message in get_flashed_messages() %}
+            <p> {{message}} </p><br>
+        {% endfor %}
+        <input type="text" name="input_name">
+        <p>What's your e-mail address</p><br>
+        <input type="email" name="input_mail">
+        <br>
+        <input type="submit" value="Greet" id="greet">
+    </form>
+</body>
+</html>
